@@ -21,3 +21,4 @@ if __name__ == "__main__":
 	print p.x
 	p.x = 6
 	print p.x
+	print dir(PropSquare.x)
