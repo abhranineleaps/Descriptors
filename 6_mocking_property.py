@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
-class ImproperlyConfigured(Exception):
-	pass
+# own init, maintains state
+# explain similarity property and Property 
 
 
 class Property(object):

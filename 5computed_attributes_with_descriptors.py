@@ -1,5 +1,9 @@
 #!/usr/bin/env python
 
+# attribute interception, attribute computed dynamically
+# can't set < 0, data validation use case
+# omit set, data descriptors
+
 class SquaredDesc(object):
 	def __get__(self, instance, owner):
 		return instance._value**2

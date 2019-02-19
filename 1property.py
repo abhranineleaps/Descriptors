@@ -4,7 +4,8 @@
 # order of fget, fset and fdel is important
 # pay attention to type of Person.name and method of this property object
 # properties are inheritable, see Employee class.
-
+# dir(Person.name) -> setter, getter, deleter
+# property can act as decorator
 
 class Person(object):
 	def __init__(self, name):
@@ -38,7 +39,7 @@ if __name__ == "__main__":
 	print "Printing person's name : {}".format(person.name)
 	person.name = "Shanker"
 	del person.name
-	print "-------------------------------"
+	print "------------------------------- "
 	emp = Employee("Hari")
 	print emp.name
 

@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 
+#how initialization calls setattr which modifies namespace
 
 class Person(object):
 	def __init__(self, name, profession):

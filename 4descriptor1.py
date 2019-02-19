@@ -1,6 +1,8 @@
 #!/usr/bin/env python
 
-
+# descriptor protocol
+#route get set delete to instance of some class
+# can be inherited
 
 class Name(object):
 	"""

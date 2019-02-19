@@ -9,6 +9,11 @@ Managing attributes:
 by managing attribute access i mean Adding attribute accessor logic.
 attribute accessor logic is something that we want to run when an attribute is retrieved/modified or is going to get deleted.
 
+Use Cases:
+ 1. 
+ 2.
+
+
 I am going to discuss 4 attribute accessor techniques.
 
 1. using __getattr__ and __setattr__, for routing all udefined attribute fetches and assignment to a generic handler method
