@@ -13,7 +13,7 @@ class Property(object):
 
 	def __get__(self, instance, owner):
 		if instance is None:
-			raise ImproperlyConfigured("Instance can't be None")
+			return self
 
 		if self.fget is None:
 			raise AttributeError("Can't get attribute")
@@ -21,7 +21,7 @@ class Property(object):
 	
 	def __set__(self, instance, value):
 		if instance is None:
-			raise ImproperlyConfigured("Instance can't be None")
+			return self
 
 		if self.fset is None:
 			raise AttributeError("Can't set attribute")
@@ -29,7 +29,7 @@ class Property(object):
 
 	def __delete__(self, instance):
 		if instance is None:
-			raise ImproperlyConfigured("Instance can't be None")
+			return self
 
 		if self.fdel is None:
 			raise AttributeError("Can't delete attribute")
@@ -60,6 +60,7 @@ if __name__ == "__main__":
 	p = Person("vijay")
 	print p.name
 	p.name = "shanker"
+	print type(Person.name)
 	del p.name
 
 

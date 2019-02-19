@@ -70,7 +70,47 @@ run 05computed_attributes_with_descriptors.py
 
 Points to make:
 1. getting value have been intercepted and is computed dynamically
-2. in setting value, we raised AttributeError if value is less than 0. 
+2. in setting value, we raised AttributeError if value is less than 0.
+
+run 06_mocking_property.py
+Property class catches attribute access with descriptor protocol and routes access request to methods saved in descriptor state.
+
+Points to make:
+1. property are convinient way to create a descriptor
+2. descriptors can maintain state of their own
+3. go through the code. 
+
+__________________________________________________________________________________________________________________
+
+ "__getattr__" and "__getattribute__"
+
+ these are generic attribute handlers. we override them in order to intercept attribute fetching operation and run our custom accessor logic.
+ using these two, we can only intercept attribute fetches.
+ (can override __setattr__ for attribute assignment, __delattr__ for attribute deletion.) 
+
+"__getattr__"
+
+  1. runs for undefined attribute, attributes not stored on an instance or inherited from Parent classes
+
+"__getattribute__"
+	
+   1. runs for every attribute access
+   2. it gets called first, if call fails, __getattr__ get called
+
+run 07_getattr_and_getattribute.py
+
+Points to make:
+1. control flow of attribute access interception.
+
+"__setattr__" and "__delattr__"
+
+run 08_setattr_delattr.py
+
+Points to make:
+1. how inside init, how initialization calls setattr which modifies namespace, __dict__ and on calling del, key is removed from namespace dict.
+
+
+
 
 
 
