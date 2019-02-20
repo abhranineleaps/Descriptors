@@ -36,6 +36,15 @@ class Property(object):
 
 		self.fdel(instance)
 
+	def getter(self, fget):
+		return type(self)(fget, self.fset, self.fdel)
+
+	def setter(self, fset):
+		return type(self)(self.fget, fset, self.fdel)
+
+	def deleter(self, fdel):
+		return type(self)(self.fget, self.fset, fdel)
+
 
 class Person(object):
 	def __init__(self, name):

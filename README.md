@@ -10,16 +10,20 @@ by managing attribute access i mean Adding attribute accessor logic.
 attribute accessor logic is something that we want to run when an attribute is retrieved/modified or is going to get deleted.
 
 Use Cases:
- 1. 
- 2.
+ 1. computing dynamic attributes
+ 2.	validation, bound checking
+ 3. stopping attributes getting changed
+ 4. allowing only certain set of attributes to be set on class
+ 5. stopping deletion of attributes.
 
 
 I am going to discuss 4 attribute accessor techniques.
 
-1. using __getattr__ and __setattr__, for routing all udefined attribute fetches and assignment to a generic handler method
-2. using __getattribute__, for routing all attribute fetches to a generic handler method
-3. the property built-in, for routing specific attribute access to get and set handler methods.
-4. the descriptor protocol, for routing specific attribute access to instance of classes having get/set/delete methods.
+
+1. the property built-in, for routing specific attribute access to get and set handler methods.
+2. the descriptor protocol, for routing specific attribute access to instance of classes having get/set/delete methods.
+3. using __getattr__ and __setattr__, for routing all udefined attribute fetches and assignment to a generic handler method
+4. using __getattribute__, for routing all attribute fetches to a generic handler method
 
 the first two of these accessor techniques are generic handlers while last two are specific to particular attributes.
 
